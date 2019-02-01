@@ -1,2 +1,2 @@
 # cs224n
-Stanford cs22n deep learning in NLP
+Stanford cs224n deep learning in NLP
