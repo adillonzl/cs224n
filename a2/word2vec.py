@@ -62,14 +62,14 @@ def naiveSoftmaxLossAndGradient(
     y = np.zeros(wordNum)
     y[outsideWordIdx] = 1
 
-    z = np.matmul(outsideVectors, centerWordVec)  # outsideVectors here is already row vectors, try broadcasting
+    z = np.matmul(outsideVectors, centerWordVec)  # outsideVectors here is already row vectors,
     yhat = softmax(z)
 
     loss = -np.log(yhat[outsideWordIdx])
 
     diff = yhat-y
     diff = diff.reshape(diff.shape[0],1)
-    gradCenterVec = np.matmul(outsideVectors.T, diff) # try broadcasting
+    gradCenterVec = np.matmul(outsideVectors.T, diff)
     centerWordVec = centerWordVec.reshape(1, -1)
     gradOutsideVecs = np.matmul(diff,centerWordVec)  # centerWordVec here doesn't need transpose
 
